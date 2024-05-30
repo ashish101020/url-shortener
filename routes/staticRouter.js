@@ -1,9 +1,9 @@
 const express = require("express");
 const URL = require("../models/url.js");
 
-const staticRoute = express.Router();
+const router = express.Router();
 
-staticRoute.get("/", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const allUrls = await URL.find({});
         res.render("home", { urls: allUrls });
@@ -13,4 +13,10 @@ staticRoute.get("/", async (req, res) => {
     }
 });
 
-module.exports = staticRoute;
+router.get("/signup", (req,res)=>{
+
+})
+
+
+
+module.exports = router;
